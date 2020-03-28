@@ -75,8 +75,7 @@ void FileContextMenuExt::OnVerbDisplayFileName(HWND hWnd)
 		cmd = L"\"c:\\Program Files (x86)\\Filestar\\Filestar.exe\" " :
 		cmd = L"\"c:\\Program Files\\Filestar\\Filestar.exe\" ";
 		
-		
-	
+			
 	
 	for (auto const& x : m_fMap)
 	{
