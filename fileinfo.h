@@ -113,10 +113,10 @@ public:
 	// write files information to log file
 	template<typename _El>
 	bool WriteLog(const _El * path) {
-		logfile<wchar_t> output(path);
+		/*logfile<wchar_t> output(path);
 		std::for_each(begin(), end(), [&](const _Mypair & p){
 			output << newdata << std::setw(35) << std::left
-				<< p.first << p.second.get() << std::endl; });
+				<< p.first << p.second.get() << std::endl; });*/
 			return true;
 	}
 	// get file information and add it to map

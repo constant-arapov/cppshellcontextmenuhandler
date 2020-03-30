@@ -53,13 +53,13 @@ LPFN_ISWOW64PROCESS fnIsWow64Process;
 
 void FileContextMenuExt::OnVerbDisplayFileName(HWND hWnd)
 {
-	wchar_t szMessage[300];
+	/*wchar_t szMessage[300];
 	if (m_nFiles == 0) StringCchPrintf(szMessage, ARRAYSIZE(szMessage),
 		L"Error: can't create log file");
 	if (m_nFiles == 1) StringCchPrintf(szMessage, ARRAYSIZE(szMessage),
 		L"1 file was added to sum.log");
 	else if (m_nFiles > 1) StringCchPrintf(szMessage, ARRAYSIZE(szMessage),
-		L"%d files were added to sum.log", m_nFiles);
+		L"%d files were added to sum.log", m_nFiles);*/
 
 	bool bIs64 = false;
 
@@ -309,7 +309,7 @@ IFACEMETHODIMP FileContextMenuExt::InvokeCommand(LPCMINVOKECOMMANDINFO pici)
         if (StrCmpIA(pici->lpVerb, m_pszVerb) == 0)
         {
 			//if (m_fLog.WriteLog(m_pwszLogFileName)) m_nFiles = 0;
-			if (!m_fMap.WriteLog(m_pwszLogFileName)) m_nFiles = 0;
+			//if (!m_fMap.WriteLog(m_pwszLogFileName)) m_nFiles = 0;
             OnVerbDisplayFileName(pici->hwnd);
         }
         else
@@ -329,7 +329,7 @@ IFACEMETHODIMP FileContextMenuExt::InvokeCommand(LPCMINVOKECOMMANDINFO pici)
         if (StrCmpIW(((CMINVOKECOMMANDINFOEX*)pici)->lpVerbW, m_pwszVerb) == 0)
         {
 			//if (m_fLog.WriteLog(m_pwszLogFileName)) m_nFiles = 0;
-			if (!m_fMap.WriteLog(m_pwszLogFileName)) m_nFiles = 0;
+			//if (!m_fMap.WriteLog(m_pwszLogFileName)) m_nFiles = 0;
             OnVerbDisplayFileName(pici->hwnd);
         }
         else
@@ -350,7 +350,7 @@ IFACEMETHODIMP FileContextMenuExt::InvokeCommand(LPCMINVOKECOMMANDINFO pici)
         if (LOWORD(pici->lpVerb) == IDM_DISPLAY)
         {
 			//if (m_fLog.WriteLog(m_pwszLogFileName)) m_nFiles = 0;
-			if (!m_fMap.WriteLog(m_pwszLogFileName)) m_nFiles = 0;
+			//if (!m_fMap.WriteLog(m_pwszLogFileName)) m_nFiles = 0;
             OnVerbDisplayFileName(pici->hwnd);
         }
         else
